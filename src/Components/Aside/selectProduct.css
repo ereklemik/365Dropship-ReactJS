@@ -1,0 +1,27 @@
+.select-product__wrapper {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.select-product__options{
+  width: 90%;
+  height: 30px;
+  font-size: 16px;
+  font-family: Gilroy-bold;
+  font-weight:700;
+  color: #ffff;
+  background-color: #5d6b9f;
+  outline: none;
+  border: none;
+}
+.select-product__options--Niche,
+.select-product__wrapper--Niche {
+  background-color: #5d6b9f;
+}
+.select-product__options--Category,
+.select-product__wrapper--Category {
+    background-color: #9da9d5;
+}  

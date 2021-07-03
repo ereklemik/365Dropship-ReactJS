@@ -1,0 +1,10 @@
+.aside {
+  height: 100vh;
+  width: 208px;
+  background-color: #ecedf5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -200px;
+  position: fixed;
+}

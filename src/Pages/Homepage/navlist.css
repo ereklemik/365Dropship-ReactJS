@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.Nav__Items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nav__Lists {
+    color: #fff;
+    margin: 10px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 800;
+    /*font-family: 'Anton', sans-serif;*/
+    font-family: -apple-system
+}

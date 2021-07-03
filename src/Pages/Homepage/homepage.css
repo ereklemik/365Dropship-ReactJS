@@ -1,0 +1,9 @@
+.homepage {
+    height: 100vh;
+    scroll-behavior: smooth;
+    background: url('https://mk0q365dropshipe482k.kinstacdn.com/wp-content/uploads/2020/08/lasthero.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

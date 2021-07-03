@@ -1,0 +1,19 @@
+.Daialog {
+    width: 431px;
+    height: 600px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+

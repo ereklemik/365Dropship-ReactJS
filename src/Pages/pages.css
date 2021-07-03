@@ -1,0 +1,40 @@
+.Profile__Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Dashbord__Title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Inventory__Title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cart__Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Orders__Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Transactions__Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Store__Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,25 @@
+.sort__section {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background-color:#ffffff;
+  margin-left:-22px;
+  border-top:1px solid var(--border-color);
+}
+
+#icon{
+  color:#B6B9CA;
+  margin-left:28px;
+}
+#sort {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ccc9c9;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .sort__section {
+    text-align: center;
+  }
+}
