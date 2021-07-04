@@ -89,6 +89,9 @@ function App() {
         </Route>
         <Route exact path="/">
           <Redirect to="/catalog" />
+
+
+          
         </Route>
       </Switch>
     </Router>
