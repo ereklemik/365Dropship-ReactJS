@@ -18,7 +18,7 @@ import Orders from "./Pages/Orders";
 import Inventory from "./Pages/Inventory";
 import Transactions from "./Pages/Transactions";
 import Store from "./Pages/Store";
-
+import AddProduct from "./Pages/AddProduct";
 function App() {
   const [products, setProducts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -47,8 +47,8 @@ function App() {
         <Route path={"/DASHBOARD"}>
           <Dashboard />
         </Route>
-        <Route path={"/Invnetory"}>
-          <Inventory />
+        <Route path={"/Inventory"}>
+          <Inventory selectedProducts={selectedProducts} />
         </Route>
         <Route path={"/SHOPPING"}>
           <Cart />
@@ -56,10 +56,13 @@ function App() {
         <Route path={"/ORDERS"}>
           <Orders />
         </Route>
+        <Route path={"/addProduct/:productId?"}>
+          <AddProduct />
+        </Route>
         <Route path={"/TRANSACTION"}>
           <Transactions />
         </Route>
-        <Route path={"/STORES"}>
+        <Route path={"/STORE"}>
           <Store />
         </Route>
         <Route path={"/catalog"}>

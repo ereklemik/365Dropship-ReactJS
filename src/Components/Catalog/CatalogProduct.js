@@ -48,7 +48,7 @@ const CatalogProduct = ({
           <p>RRP</p>
         </div>
         <div>
-          <p>${price}</p>
+        <p>${price}</p>
           <p>COST</p>
         </div>
         <div className="profit">

@@ -1,6 +1,7 @@
 import "./selectProduct.css";
 import Checkbox from "./Checkbox";
 import Button from "../Header/Button";
+import {addToCart} from "../../Pages/Homepage/Api"
 const SelectProduct = ({
   catalogSelected,
   handleCatalogSelect,
@@ -21,7 +22,9 @@ const SelectProduct = ({
         id={id}
         isChecked={selectedProducts.includes(id)}
       />
-      <Button content="add to inventory" className={"addToInventory--hover"}/>
+    <span onClick={() =>{ addToCart(id,1)}} >
+                <Button content="add to inventory" className={"addToInventory--hover"}/>
+            </span>
     </div>
   );
 };

@@ -2,13 +2,10 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import "./dialog.css";
-import { Grid } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { login } from "./Api";
 import Registration from "./Registration";
-import { Link } from "react-router-dom";
-import Catalog from "../../Components/Catalog/Catalog";
 
 const Modal = ({ handleClickOpen, handleClose, open }) => {
   const history = useHistory();
