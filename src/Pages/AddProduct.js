@@ -38,7 +38,7 @@ const AddProduct = () => {
     }
   };
   return (
-    <div className={"addProduct"}>
+    <div >
       <p>{productId ? "edit" : "add"} products</p>
       <Formik
         enableReinitialize
@@ -60,7 +60,7 @@ const AddProduct = () => {
         onSubmit={handleSubmit}
         validationSchema={creatProductValidation}
       >
-        <Form >
+        <Form className={"addProduct"} >
           <Field placeholder="Title" name="title" />
           <ErrorMessage
             name={"title"}
