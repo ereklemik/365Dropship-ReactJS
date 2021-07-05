@@ -1,7 +1,7 @@
-import { cart } from "./Homepage/Api";
+import { cart } from "../Components/API/API"
 import { useEffect, useState } from "react";
 import CatalogProduct from "../Components/Catalog/CatalogProduct";
-const Inventory = ({ selectedItems, setSelectedItems }) => {
+const Inventory = ({ selectedItems, setSelectedItems}) => {
   const [cartProduct, setCartProducts] = useState([]);
   const getCartProducts = async () => {
     const result = await cart();

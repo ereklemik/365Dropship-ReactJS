@@ -1,4 +1,4 @@
-import Logout from './Homepage/Logout'
+import Logout from "../Components/Authorization/Logout";
 import "./profile.css"
 
 

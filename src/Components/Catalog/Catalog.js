@@ -3,7 +3,7 @@ import "./catalog.css";
 import CatalogProduct from "./CatalogProduct";
 import Modal from "../Modal/Modal";
 import Sort from "../Header/Sort";
-import {getProducts} from "../../Pages/Homepage/Api"
+import {getProducts} from "../../Components/API/API";
 
 const Catalog = ({
   products,

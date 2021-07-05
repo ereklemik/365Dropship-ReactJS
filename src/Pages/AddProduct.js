@@ -1,9 +1,9 @@
 import { Form, Formik, Field, ErrorMessage } from "formik";
-import { creatProduct, getProduct, updateProduct } from "./Homepage/Api";
+import { creatProduct, getProduct, updateProduct } from "../Components/API/API";
 import * as yup from "yup";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./addProduct.css"
+import "./addProduct.css";
 
 const creatProductValidation = yup.object().shape({
   title: yup.string().min(2).max(20),
@@ -38,8 +38,8 @@ const AddProduct = () => {
     }
   };
   return (
-    <div >
-      <p>{productId ? "edit" : "add"} products</p>
+    <div>
+      <p>{productId ? "edit" : "add"} </p>
       <Formik
         enableReinitialize
         initialValues={
@@ -60,7 +60,7 @@ const AddProduct = () => {
         onSubmit={handleSubmit}
         validationSchema={creatProductValidation}
       >
-        <Form className={"addProduct"} >
+        <Form className={"addProduct"}>
           <Field placeholder="Title" name="title" />
           <ErrorMessage
             name={"title"}

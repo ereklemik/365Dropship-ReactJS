@@ -1,4 +1,7 @@
 .Profile{
-    margin-left:222px;
-
+    margin-left:80px;
+    margin-top:12px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
 }

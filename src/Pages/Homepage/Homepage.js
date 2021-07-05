@@ -1,7 +1,7 @@
 import "./homepage.css";
 import Nav from "./Nav";
 import Wrapper from "./Wrapper";
-import Login from "./Login";
+import Login from "../../Components/Authorization/Login";
 import React from "react";
 import { useState } from "react";
 import { Switch, Route, Router, Link } from "react-router-dom";

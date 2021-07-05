@@ -28,7 +28,6 @@ const CatalogProduct = ({
       className={`catalog__product ${
         selectedProducts.includes(id) ? "catalog__product--border" : ""
       }`}
-      onClick={openModal}
     >
       <SelectProduct
         catalogSelected={selected}
@@ -41,14 +40,14 @@ const CatalogProduct = ({
         <img src={image} alt="" />
       </div>
       <div className="catalog__title">{title}</div>
-    
+
       <div className="prices">
         <div>
           <p>$20</p>
           <p>RRP</p>
         </div>
         <div>
-        <p>${price}</p>
+          <p>${price}</p>
           <p>COST</p>
         </div>
         <div className="profit">
@@ -57,8 +56,6 @@ const CatalogProduct = ({
         </div>
       </div>
     </div>
- 
-
   );
 };
 export default CatalogProduct;
