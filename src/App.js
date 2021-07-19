@@ -24,6 +24,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState("");
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const [cartProduct, setCartProducts] = useState([]);
 
   const sellectAllProducts = () => {
     setSelectedProducts(products.map((product) => product.id));
@@ -35,40 +36,41 @@ function App() {
 
   return (
     <Router>
-    {token && <Sidebar />}
-    <Switch>
-        <Route exact path='/'>
-            <Redirect to='/' />
-            <Homepage />
+      {token && <Sidebar />}
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/" />
+          <Homepage />
         </Route>
-        <Route path={'/Profile'}>
-            < Profile/>
+        <Route path={"/Profile"}>
+          <Profile />
         </Route>
-        <Route path={'/DASHBOARD'}>
-            < Dashboard/>
+        <Route path={"/DASHBOARD"}>
+          <Dashboard />
         </Route>
-        <Route path={'/Inventory'}>
-            < Inventory
-                selectedProducts={selectedProducts}
-            />
+        <Route path={"/Inventory"}>
+          <Inventory
+            selectedProducts={selectedProducts}
+            setSelectedProducts={setSelectedProducts}
+          />
         </Route>
-        <Route path={'/SHOPPING'}>
-            < Cart />
+        <Route path={"/SHOPPING"}>
+          <Cart />
         </Route>
-        <Route path={'/ORDERS'}>
-            < Orders />
+        <Route path={"/ORDERS"}>
+          <Orders />
         </Route>
-        <Route path={'/addProduct/:productId?'}>
-            <AddProduct/>
+        <Route path={"/addProduct/:productId?"}>
+          <AddProduct />
         </Route>
-        <Route path={'/TRANSACTION'}>
-            < Transactions />
+        <Route path={"/TRANSACTION"}>
+          <Transactions />
         </Route>
-        <Route path={'/STORE'}>
-            < Store />
+        <Route path={"/STORE"}>
+          <Store />
         </Route>
-        <Route path={'/catalog'}>
-            <div className="content">
+        <Route path={"/catalog"}>
+          <div className="content">
             <Aside products={products} setProducts={setProducts} />
             <Header
               products={products}
@@ -86,11 +88,14 @@ function App() {
               setProducts={setProducts}
               selectedProducts={selectedProducts}
               setSelectedProducts={setSelectedProducts}
+              cartProduct={cartProduct}
+              setCartProducts={setCartProducts}
+
             />
-           </div>
-              </Route>
-          </Switch>
-      </Router>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

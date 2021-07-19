@@ -12,10 +12,11 @@ const Login = ({ handleClickOpen, handleClose, open }) => {
 
   return (
     <div className={"LoginButton"}>
-      <Button variant="outlined" style={styled} onClick={handleClickOpen}>
+       <Button variant="outlined" style={styled} onClick={handleClickOpen}>
         SING UP NOw
-      </Button>
+      </Button> 
     </div>
+    
   );
 };
 

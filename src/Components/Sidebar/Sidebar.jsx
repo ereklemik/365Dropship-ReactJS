@@ -13,9 +13,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className={"nav"}>
+
       <nav className={"nav__container"}>
         <div>
-        <Link to={"/Dashboard"}>
+          <Link to={"/Dashboard"}>
           <img src={dropship_logo} className={"dropshipLogo"} alt={"logo"} />
           </Link>
           <div className={"nav__list"}>
@@ -29,7 +30,7 @@ const Sidebar = () => {
               <Link to={"/Catalog"}>
                 <img src={catalog} />
               </Link>
-              <Link to={"/Invnetory"}>
+              <Link to={"/Inventory"}>
                 <img src={inventory} />
               </Link>
               <Link to={"/Cart"}>

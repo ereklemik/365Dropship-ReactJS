@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import "./addProduct.css";
 
 const creatProductValidation = yup.object().shape({
-  title: yup.string().min(2).max(20),
+  title: yup.string().min(2).max(40),
   description: yup.string().min(8).max(500),
   price: yup.number().integer().min(20),
   imageUrl: yup.string().url(),
@@ -61,7 +61,7 @@ const AddProduct = () => {
         validationSchema={creatProductValidation}
       >
         <Form className={"addProduct"}>
-          <Field placeholder="Title" name="title" />
+          <Field placeholder="Title" name="title" className="addProduct-input" />
           <ErrorMessage
             name={"title"}
             className={"ErrorMessage"}
@@ -72,6 +72,7 @@ const AddProduct = () => {
             placeholder="Description"
             component="textarea"
             name="description"
+            className="addProduct-input"
           />
           <ErrorMessage
             name={"description"}
@@ -79,14 +80,14 @@ const AddProduct = () => {
             component={"div"}
           />
 
-          <Field placeholder="Price" name="price" />
+          <Field placeholder="Price" name="price" className="addProduct-input"/>
           <ErrorMessage
             name={"price"}
             className={"ErrorMessage"}
             component={"div"}
           />
 
-          <Field placeholder="Image URL" name="imageUrl" />
+          <Field placeholder="Image URL" name="imageUrl" className="addProduct-input" />
           <ErrorMessage
             name={"imageUrl"}
             className={"ErrorMessage"}

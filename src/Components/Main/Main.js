@@ -7,6 +7,8 @@ const Main = ({
   selectedProducts,
   setSelectedProducts,
   unselectAll,
+  cartProduct,
+  setCartProducts
 }) => {
   
   
@@ -15,10 +17,11 @@ const Main = ({
       <Catalog
         products={products}
         setProducts={setProducts}
-       
         selectedProducts={selectedProducts}
         setSelectedProducts={setSelectedProducts}
         unselectAll={unselectAll}
+        cartProduct={cartProduct}
+        setCartProducts={setCartProducts}
       />
     </main>
   );
