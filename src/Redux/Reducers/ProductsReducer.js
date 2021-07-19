@@ -5,7 +5,7 @@ import {
   PRICE_FILTER,
   SELECTED_PRODUCTS,
   PRODUCT_LIST,
-} from "../contetnt/actionTypes";
+} from "../../Redux/Action-types/ActionTypes";
 import { productList } from "../../Redux/Actions/ProductsAction";
 
 const initState = {
