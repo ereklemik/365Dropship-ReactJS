@@ -2,8 +2,7 @@ import axios from "axios";
 
 export const SERVER_URL = "http://18.185.148.165:3000/";
 export const SERVER_V1 = SERVER_URL + "api/v1/";
-export const SERVER_PRODUCTS = SERVER_V1 + 'products';
-
+export const SERVER_PRODUCTS = SERVER_V1 + "products";
 
 export const getProducts = async () => {
   try {

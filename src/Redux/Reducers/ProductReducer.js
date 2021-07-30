@@ -1,32 +1,25 @@
 import {
+  FILTER_PRODUCTS,
   GET_PRODUCTS,
   SEARCH_PRODUCTS,
+  SELECT_PRODUCT,
   SORT_PRODUCTS,
-  PRICE_FILTER,
-  SELECTED_PRODUCTS,
-  PRODUCT_LIST,
-} from "../../Redux/Action-types/ActionTypes";
-import { productList } from "../../Redux/Actions/ProductsAction";
+} from "../Actions/ActionTypes";
 
 const initState = {
   products: [],
   allProducts: [],
-  productsList: [],
   searchedProducts: [],
+  selectedProducts: [],
+  isLoading: true,
 };
 
 export const sortProducts = (sort, data) => {
-  if (sort === "asc") {
-    data.sort((a, b) => b.price - a.price);
-  } else if (sort === "desc") {
-    data.sort((a, b) => a.price - b.price);
-  } else if (sort === "a_b") {
-    data.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (sort === "b_a") {
-    data.sort((b, a) => b.title.localeCompare(a.title));
-  } else {
-    console.log(`404 data error`);
-  }
+  sort === "asc" && data.sort((a, b) => b.price - a.price);
+  sort === "desc" && data.sort((a, b) => a.price - b.price);
+  sort === "alpasc" && data.sort((a, b) => (a.title > b.title ? 1 : -1));
+  sort === "alpdesc" && data.sort((a, b) => (a.title > b.title ? -1 : 1));
+  sort === "def" && data.sort((a, b) => a.id - b.id);
   return data;
 };
 
@@ -36,28 +29,21 @@ const searchProducts = (searchValue, data) => {
   );
 };
 
-const productReducer = (state = initState, action) => {
+const ProductReducer = (state = initState, action) => {
   switch (action.type) {
     case GET_PRODUCTS:
       return {
         ...state,
         products: action.payload.productData,
         allProducts: action.payload.productData,
+        isLoading: false,
       };
-
     case SORT_PRODUCTS:
       return {
         ...state,
         products: sortProducts(action.payload.sortBy, [...state.products]),
         allProducts: sortProducts(action.payload.sortBy, [
           ...state.allProducts,
-        ]),
-      };
-    case PRODUCT_LIST:
-      return {
-        ...state,
-        productsList: productList(action.payload.productListValue, [
-          ...state.productsList,
         ]),
       };
     case SEARCH_PRODUCTS:
@@ -67,6 +53,21 @@ const productReducer = (state = initState, action) => {
           ...state.allProducts,
         ]),
       };
+    case SELECT_PRODUCT:
+      return {
+        ...state,
+        selectedProducts: action.payload.selectedProducts,
+      };
+    case FILTER_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload.filter,
+      };
+    case "LOADING":
+      return {
+        ...state,
+        isLoading: true,
+      };
     default:
       return {
         ...state,
@@ -74,4 +75,4 @@ const productReducer = (state = initState, action) => {
   }
 };
 
-export default productReducer;
+export default ProductReducer;

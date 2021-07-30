@@ -90,7 +90,6 @@ function App() {
               setSelectedProducts={setSelectedProducts}
               cartProduct={cartProduct}
               setCartProducts={setCartProducts}
-
             />
           </div>
         </Route>

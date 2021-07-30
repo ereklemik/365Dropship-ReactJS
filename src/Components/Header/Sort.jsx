@@ -14,7 +14,7 @@ const Sort = ({ products, setProducts }) => {
       products.sort((a, b) => a.title.localeCompare(b.title));
       handleSort(products);
     }
-    if (e.target.value === "Z-A") {
+    if (e.target.value === "zZ-A") {
       products.sort((a, b) => b.title.localeCompare(a.title));
       handleSort(products);
     }

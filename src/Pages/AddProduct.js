@@ -1,15 +1,24 @@
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import { creatProduct, getProduct, updateProduct } from "../Components/API/API";
+import TextField from "@material-ui/core/TextField";
 import * as yup from "yup";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import "./addProduct.css";
 
 const creatProductValidation = yup.object().shape({
-  title: yup.string().min(2).max(40),
-  description: yup.string().min(8).max(500),
-  price: yup.number().integer().min(20),
-  imageUrl: yup.string().url(),
+  title: yup
+    .string()
+    .required("Required")
+    .min(2, "Title must exceed 2 characters"),
+  description: yup
+    .string()
+    .required("Required")
+    .min(4, "Description must exceed 4 characters"),
+  price: yup.number().integer("Price must be an integer").required("Required"),
+  imageUrl: yup.string().url("Input must be a url"),
 });
 const AddProduct = () => {
   const { productId } = useParams();
@@ -61,7 +70,11 @@ const AddProduct = () => {
         validationSchema={creatProductValidation}
       >
         <Form className={"addProduct"}>
-          <Field placeholder="Title" name="title" className="addProduct-input" />
+          <Field
+            placeholder="Title"
+            name="title"
+            className="addProduct-input"
+          />
           <ErrorMessage
             name={"title"}
             className={"ErrorMessage"}
@@ -80,14 +93,22 @@ const AddProduct = () => {
             component={"div"}
           />
 
-          <Field placeholder="Price" name="price" className="addProduct-input"/>
+          <Field
+            placeholder="Price"
+            name="price"
+            className="addProduct-input"
+          />
           <ErrorMessage
             name={"price"}
             className={"ErrorMessage"}
             component={"div"}
           />
 
-          <Field placeholder="Image URL" name="imageUrl" className="addProduct-input" />
+          <Field
+            placeholder="Image URL"
+            name="imageUrl"
+            className="addProduct-input"
+          />
           <ErrorMessage
             name={"imageUrl"}
             className={"ErrorMessage"}
