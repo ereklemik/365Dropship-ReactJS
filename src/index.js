@@ -2,25 +2,33 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import { applyMiddleware, compose, createStore } from "redux";
-import combinedReducer from "./Redux/Reducers/Index";
-import thunk from "redux-thunk";
-import { createTheme, MuiThemeProvider } from "@material-ui/core";
-
-const composeEnchanser = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import { SnackbarProvider} from 'notistack';
+import productsReducer from "./Redux/Products/ProductsReducer";
+import modalReducer from "./Redux/Modal/ModalReducer";
+import { combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+const reducers = combineReducers({
+  products: productsReducer,
+  modal: modalReducer,
+});
 
 const store = createStore(
-  combinedReducer,
-  composeEnchanser(applyMiddleware(thunk))
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+
 ReactDOM.render(
-  <Router>
-    <Provider store={store}>
-      <App />
+  <Provider store={store}>
+    <SnackbarProvider maxSnack={5}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+      </SnackbarProvider>
     </Provider>
-  </Router>,
+
+,
   document.getElementById("root")
 );

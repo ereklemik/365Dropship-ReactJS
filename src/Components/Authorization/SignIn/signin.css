@@ -1,0 +1,22 @@
+.signUp-main--signIn {
+    width: 413px;
+    height: 520px;
+    box-shadow: 0 0 12px #6b6b6b;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 34px 40px;
+  }
+  .signUp__title-members {
+    margin-right: 100px;
+  }
+  .ErrorMessage {
+    color: red;
+    margin-left: 10px;
+  }
+  

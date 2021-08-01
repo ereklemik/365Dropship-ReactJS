@@ -18,7 +18,7 @@ axios.interceptors.request.use((req) => {
   return req;
 });
 
-export const registration = async (
+export const signup = async (
   firstName,
   lastName,
   email,
@@ -36,7 +36,7 @@ export const registration = async (
     localStorage.setItem("user", JSON.stringify(result.data.data));
     localStorage.setItem("token", result.data.data.token);
   } catch (err) {
-    alert("Waring Account not register");
+    alert("Something went wrong");
   }
 };
 export const login = async (email, password) => {
@@ -45,7 +45,7 @@ export const login = async (email, password) => {
     localStorage.setItem("user", JSON.stringify(result.data.data));
     localStorage.setItem("token", result.data.data.token);
   } catch (error) {
-    alert("Waring Account not register");
+    alert("Something went wrong");
   }
 };
 
@@ -87,4 +87,13 @@ export const updateProduct = async (id, data) => {
 export const getProduct = async (id) => {
   const result = await axios.get(SERVER_V1 + `products/${id}`);
   return result.data.data;
+};
+
+export const addProduct = async (data) => {
+  const result = await axios.post(SERVER_URL + "api/v1/products", data);
+  return result.data.data;
+};
+
+export const deleteProduct = async (id) => {
+  await axios.delete(SERVER_URL + `api/v1/products/${id}`);
 };

@@ -1,0 +1,46 @@
+.homepageBody__container {
+    margin-top: 10px;
+    width: 955px;
+    height: 273px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 300px;
+    background-color: rgba(36, 41, 62, 0.8);
+    flex-direction: column;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    transform-origin: 50% 50%;
+    opacity: 1;
+    visibility: visible;
+    padding: 50px 0;
+    color: white;
+  }
+  .homepageBody__text {
+    font-weight: 700;
+    font-size: 36px;
+    color: #fff;
+  }
+  @media only screen and (max-width: 1000px) {
+    .homepageBody__container {
+      max-width: 100%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    .homepageBody__text {
+      font-weight: 400;
+      font-size: 20px;
+    }
+    .landing_img {
+      width: 140px;
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    .homepageBody__text {
+      font-size: 15px;
+    }
+  }
+  

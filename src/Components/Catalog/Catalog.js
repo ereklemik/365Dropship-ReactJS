@@ -3,7 +3,10 @@ import "./catalog.css";
 import CatalogProduct from "./CatalogProduct";
 import Modal from "../Modal/Modal";
 import Sort from "../Header/Sort";
-import {getProducts} from "../../Components/API/API";
+import { getProducts } from "../../Components/API/API";
+import ModifyProduct from "../../Pages/ModiyProduct";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsAction } from "../../Redux/Products/ProductsAction";
 
 const Catalog = ({
   products,
@@ -12,17 +15,15 @@ const Catalog = ({
   setSelectedProducts,
 }) => {
   const [productModal, setProductModal] = useState(null);
-  
-  useEffect(() => {
-    try {
-      getProducts().then((item) => {
-        setProducts(item);
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  }, []);
+  const productsList = useSelector((state) => state.products.productsList);
 
+  const dispach = useDispatch();
+
+  useEffect(() => {
+    getProducts().then((result) => {
+      dispach(getProductsAction(result));
+    });
+  }, []);
 
   const handleOpen = (products) => {
     setProductModal(products);
@@ -33,12 +34,13 @@ const Catalog = ({
   };
   return (
     <>
+      <ModifyProduct />
       <div className="sort">
         <Sort products={products} setProducts={setProducts} />
       </div>
       <div className="catalog">
-        {products.map((product) => (
-          
+        {productsList &&
+          productsList.map((product) => (
             <CatalogProduct
               price={product.price}
               title={product.title}
@@ -50,12 +52,11 @@ const Catalog = ({
               handleOpen={handleOpen}
               description={product.description}
             />
-    
-        ))}
+          ))}
         {productModal && (
           <Modal product={productModal} handleClose={handleClose} />
         )}
-</div>
+      </div>
     </>
   );
 };

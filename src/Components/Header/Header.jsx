@@ -29,6 +29,7 @@ const Header = ({
           <div className="unselect" onClick={unselectAll}>
           {selectedProducts.length ? <Button content={"Clear All"} className={'clearall'}/> : null}
           </div>
+          
         </div>
         <div className={"header__content"}>
           <Search
@@ -41,7 +42,9 @@ const Header = ({
             searchResult={searchResult}
             setSearchResult={setSearchResult}
           />
+           <Button content={"add Product"} className={"addToInventory--main"} />
           <Button content={"add to inventory"} className={"addToInventory--main"} />
+         
           <i className="far fa-question-circle header__questionmark"></i>
         </div>
       </header>

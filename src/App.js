@@ -1,9 +1,10 @@
 import Header from "./Components/Header/Header";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import "./App.css";
+import SignIn from "./Components/Authorization/SignIn/SignIn"
+import SignUp from "./Components/Authorization/SignUp/SignUp"
 import Main from "./Components/Main/Main";
 import Aside from "./Components/Aside/Aside";
-import Homepage from "./Pages/Homepage/Homepage";
 import { useState } from "react";
 import {
   BrowserRouter as Router,
@@ -19,6 +20,7 @@ import Inventory from "./Pages/Inventory";
 import Transactions from "./Pages/Transactions";
 import Store from "./Pages/Store";
 import AddProduct from "./Pages/AddProduct";
+import Homepage from "./Pages/Homepage/Homepage";
 function App() {
   const [products, setProducts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -42,6 +44,13 @@ function App() {
           <Redirect to="/" />
           <Homepage />
         </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/signin">
+          <SignIn />
+        </Route>
+
         <Route path={"/Profile"}>
           <Profile />
         </Route>

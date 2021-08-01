@@ -1,4 +1,4 @@
-import Logout from "../Components/Authorization/Logout";
+import SignOut from "../Components/Authorization/SignOut/SignOut";
 import "./profile.css"
 
 
@@ -11,7 +11,7 @@ const Profile = () => {
             <h4>Welcome to 365Dropship : 
                 {user.firstName}
             </h4>
-            < Logout/>
+            <SignOut/>
         </div>
     )
 }

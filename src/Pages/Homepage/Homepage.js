@@ -1,40 +1,23 @@
+import Button from "../../Components/Header/Button";
+import { useHistory } from "react-router-dom";
 import "./homepage.css";
-import Nav from "./Nav";
-import Wrapper from "./Wrapper";
-import Login from "../../Components/Authorization/Login";
-import React from "react";
-import { useState } from "react";
-import { Switch, Route, Router, Link } from "react-router-dom";
-const Home = () => {
-  const [open, setOpen] = useState(true);
+import HomepageHeader from "./HomepageHeader";
+import HomepageBody from "./HomepageBody";
 
-  const handleClickOpen = () => {
-    setOpen(true);
+const Homepage = () => {
+  const history = useHistory();
+
+  const tocatalog = () => {
+    history.push("/signup");
   };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  document.title = "Home";
-
   return (
-    <div className={"homepage"}>
-      <Nav
-        open={open}
-        setOpen={setOpen}
-        handleClickOpen={handleClickOpen}
-        handleClose={handleClose}
-      />
-      <Wrapper />
-      <Login
-        open={open}
-        setOpen={setOpen}
-        handleClickOpen={handleClickOpen}
-        handleClose={handleClose}
-      />
+    <div className="homepage-container">
+      <div className="homepage-main">
+        <HomepageHeader />
+        <HomepageBody />
+        <Button handleClick={tocatalog} signUp title="Sign Up Now" />
+      </div>
     </div>
   );
 };
-
-export default Home;
+export default Homepage;

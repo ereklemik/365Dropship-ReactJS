@@ -13,7 +13,7 @@ const CatalogProduct = ({
   selected,
   description,
   cartProduct,
-  setCartProducts
+  setCartProducts,
 }) => {
   const handleCheckbox = () => {
     setSelectedProducts([id, ...selectedProducts]);
@@ -39,10 +39,9 @@ const CatalogProduct = ({
         id={id}
         cartProduct={cartProduct}
         setCartProducts={setCartProducts}
-        
       />
       <div className="catalog__img" onClick={productClicked}>
-        <img src={image} alt="" />
+        <img src={image}  />
       </div>
       <div className="catalog__title">{title}</div>
 

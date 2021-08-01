@@ -1,9 +1,9 @@
 import { useHistory } from "react-router-dom";
-import "./logout.css";
-export const Logout = () => {
+
+export const SignOut = () => {
   const history = useHistory();
 
-  const performlogut = () => {
+  const SignOutProcess = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
     history.push("/");
@@ -13,11 +13,11 @@ export const Logout = () => {
       <input
         type="button"
         value="Log Out"
-        onClick={performlogut}
-        className="logout"
+        onClick={SignOutProcess}
+        className="SignOut"
       />
     </div>
   );
 };
 
-export default Logout;
+export default SignOut;
