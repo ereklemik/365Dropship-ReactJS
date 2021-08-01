@@ -48,6 +48,15 @@ export const login = async (email, password) => {
     alert("Something went wrong");
   }
 };
+export const updateProfile = async (id ,data) => {
+  try{
+    const result = await axios.put(`${SERVER_URL}api/v1/users/${id}` ,data)
+    console.log(result)
+  }catch(err){
+    console.log(err)
+  }
+}
+
 
 export const cart = async () => {
   try {

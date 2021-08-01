@@ -11,7 +11,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import { useSnackbar } from 'notistack';
+import { useSnackbar } from "notistack";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -177,8 +177,8 @@ const SingUp = () => {
         history.push("/catalog");
       })
       .catch(() => {
-        let variant ="error"
-        enqueueSnackbar('Sign Up failed', { variant });
+        let variant = "error";
+        enqueueSnackbar("Sign Up failed", { variant });
       });
   };
   const ToSignIn = () => {

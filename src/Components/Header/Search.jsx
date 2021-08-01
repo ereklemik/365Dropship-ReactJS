@@ -1,6 +1,6 @@
 import "./search.css";
 import { useState, useEffect } from "react";
-
+import { getProducts } from "../../Components/API/API";
 const Search = ({
   fetchedProducts,
   setProducts,
@@ -23,11 +23,11 @@ const Search = ({
   };
 
   useEffect(() => {
-    const products = JSON.parse(localStorage.getItem("products"));
-    const res = products.filter((e) => {
-      return e.title.toLowerCase().includes(searchInput.toLowerCase());
-    });
-    setProducts(res);
+    // const products = JSON.parse(localStorage.getItem("products"));
+    // const res = products.filter((e) => {
+    //   return e.title.toLowerCase().includes(searchInput.toLowerCase());
+    // });
+    // setProducts(res);
   }, [searchResult]);
 
   return (
