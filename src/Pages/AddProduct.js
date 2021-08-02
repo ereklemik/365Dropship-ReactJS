@@ -3,7 +3,7 @@ import { creatProduct, getProduct, updateProduct } from "../Components/API/API";
 import TextField from "@material-ui/core/TextField";
 import * as yup from "yup";
 import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useSnackbar } from "notistack";
 import { useEffect, useState } from "react";
 
 import "./addProduct.css";
@@ -23,7 +23,7 @@ const creatProductValidation = yup.object().shape({
 const AddProduct = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
-
+const { enqueueSnackbar } = useSnackbar();
   useEffect(() => {
     if (productId) {
       getProduct(productId).then((res) => {
@@ -48,7 +48,6 @@ const AddProduct = () => {
   };
   return (
     <div>
-     
       <Formik
         enableReinitialize
         initialValues={

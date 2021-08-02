@@ -13,50 +13,39 @@ export const getProducts = async () => {
     alert("Oops");
   }
 };
-axios.interceptors.request.use((req) => {
-  req.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
-  return req;
+axios.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
+  return config;
 });
 
-export const signup = async (
-  firstName,
-  lastName,
-  email,
-  password,
-  passwordConfirmation
-) => {
-  try {
-    const result = await axios.post(SERVER_URL + "register", {
-      firstName,
-      lastName,
-      email,
-      password,
-      passwordConfirmation,
-    });
-    localStorage.setItem("user", JSON.stringify(result.data.data));
-    localStorage.setItem("token", result.data.data.token);
-  } catch (err) {
-    alert("Something went wrong");
-  }
-};
 export const login = async (email, password) => {
   try {
     const result = await axios.post(SERVER_URL + "login", { email, password });
     localStorage.setItem("user", JSON.stringify(result.data.data));
     localStorage.setItem("token", result.data.data.token);
-  } catch (error) {
-    alert("Something went wrong");
+    console.log(result);
+  } catch (err) {
+    // alert("something went wrong ...")
+    throw new Error(err);
   }
 };
-export const updateProfile = async (id ,data) => {
-  try{
-    const result = await axios.put(`${SERVER_URL}api/v1/users/${id}` ,data)
-    console.log(result)
-  }catch(err){
-    console.log(err)
+export const updateProfile = async (id, data) => {
+  try {
+    const result = await axios.put(`${SERVER_URL}api/v1/users/${id}`, data);
+    console.log(result);
+  } catch (err) {
+    console.log(err);
   }
-}
-
+};
+export const signup = async (data) => {
+  try {
+    const result = await axios.post(SERVER_URL + "register", data);
+    localStorage.setItem("user", JSON.stringify(result.data.data));
+    localStorage.setItem("token", result.data.data.token);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
 
 export const cart = async () => {
   try {

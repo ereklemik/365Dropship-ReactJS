@@ -4,7 +4,10 @@ import {
     PRODUCT_UPDATED,
     SEARCH_TYPE_CHANGED,
     SORT_TYPE_CHANGED,
+
   } from "../ActionTypes/ActionTypes";
+
+  
     
   export const getProductsAction = (products) => {
     return {
@@ -13,24 +16,7 @@ import {
     };
   };
   
-  export const changeSortTypeAction = (value) => {
-    return {
-      type: SORT_TYPE_CHANGED,
-      payload: value,
-    };
-  };
-  export const changeSearchTypeAction = (value) => {
-    return {
-      type: SEARCH_TYPE_CHANGED,
-      payload: value,
-    };
-  };
-  export const changeCategoryValueAction = (value) => {
-    return {
-      type: CATEGORY_VALUE_CHANGED,
-      payload: value,
-    };
-  };
+  
   
   export const getCartProductsAction = (products) => {
     return {

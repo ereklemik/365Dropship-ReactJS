@@ -33,7 +33,7 @@ const Header = ({
           
         </div>
         <div className={"header__content"}>
-          <Search
+          {/* <Search
             products={products}
             setProducts={setProducts}
             fetchedProducts={fetchedProducts}
@@ -42,7 +42,7 @@ const Header = ({
             setSearchInput={setSearchInput}
             searchResult={searchResult}
             setSearchResult={setSearchResult}
-          />
+          /> */}
           <Link to="/addProduct">
           <Button content={"add Product"} className={"addToInventory--main"} />
             </Link>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./catalog.css";
 import CatalogProduct from "./CatalogProduct";
 import Modal from "../Modal/Modal";
-import Sort from "../Header/Sort";
 import { getProducts } from "../../Components/API/API";
 import ModifyProduct from "../../Pages/ModiyProduct";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,9 +34,6 @@ const Catalog = ({
   return (
     <>
       <ModifyProduct />
-      <div className="sort">
-        <Sort products={products} setProducts={setProducts} />
-      </div>
       <div className="catalog">
         {productsList &&
           productsList.map((product) => (
