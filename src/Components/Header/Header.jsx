@@ -2,6 +2,7 @@ import Button from "./Button";
 import Search from "./Search";
 import "./header.css";
 import SelectProduct from "../Catalog/SelectProduct";
+import {Link } from "react-router-dom";
 const Header = ({
   products,
   setProducts,
@@ -42,7 +43,10 @@ const Header = ({
             searchResult={searchResult}
             setSearchResult={setSearchResult}
           />
-           <Button content={"add Product"} className={"addToInventory--main"} />
+          <Link to="/addProduct">
+          <Button content={"add Product"} className={"addToInventory--main"} />
+            </Link>
+          
           <Button content={"add to inventory"} className={"addToInventory--main"} />
          
           <i className="far fa-question-circle header__questionmark"></i>

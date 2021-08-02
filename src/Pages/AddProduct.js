@@ -48,7 +48,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <p>{productId ? "edit" : "add"} </p>
+     
       <Formik
         enableReinitialize
         initialValues={
